@@ -1,0 +1,206 @@
+/* ---- General Page Styling ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #141E30, #243B55);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px; /* More padding for better spacing */
+    gap: 30px; /* Increased gap between sections */
+}
+
+/* ---- Header Section ---- */
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* More space between logo and title */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 20px; /* Added margin below */
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 10px;
+}
+
+/* ---- Calculator Box ---- */
+.one-calulation {
+    margin-top: 30px;
+    text-align: center;
+    padding: 15px; /* Added padding */
+}
+
+.one-calculation-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 15px; /* Added margin below */
+}
+
+/* ---- Form Section ---- */
+.one-calulation-form {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px; /* More padding for spacing */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    width: 90%;
+    max-width: 600px;
+    backdrop-filter: blur(8px);
+    animation: fadeInUp 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between form elements */
+}
+
+/* ---- Table Styling ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px; /* Added padding */
+}
+
+th, td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- Dropdown (Select) Styling ---- */
+select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px; /* Added margin above */
+}
+
+select:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ---- CGPA Display ---- */
+#cgpa-result {
+    
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 40px; /* More spacing */
+    padding: 10px;
+}
+
+/* ---- Submit Button ---- */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(to right, #ff6600, #ffcc00);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Increased margin */
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(255, 204, 0, 0.3);
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px; /* Adjusted spacing */
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .one-calulation-form {
+        width: 100%;
+        padding: 20px; /* Adjusted for small screens */
+        gap: 15px;
+    }
+}
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
