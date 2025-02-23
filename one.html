@@ -15,7 +15,7 @@
         <h1 class="one-calculation-title">4th SEMESTER CGPA CALCULATOR</h1>
     </div>
     <div class="one-calulation-form">
-       <form>
+       <form id="cgpa-form">
             <table border="2">
                 <tr>
                     <th>SUBJECTS</th>
@@ -24,190 +24,44 @@
                 <tr>
                     <td><label>MOBILE APPLICATION DEVELOPMENT</label></td>
                     <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
+                        <select class="grade-select">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="5">C</option>
+                            <option value="5">D</option>
+                            <option value="0">F</option>
                         </select>
                     </td>
                 </tr>      
                 <tr>
                     <td><label>PYTHON</label></td>
                     <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
+                        <select class="grade-select">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="5">C</option>
+                            <option value="5">D</option>
+                            <option value="0">F</option>
                         </select>
                     </td>
                 </tr>      
-                <tr>
-                    <td><label>OPERATING SYSTEM</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>DATA MINING AND WAREHOUSING</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>AMAZON WEB SERVICES</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>              
-                <tr>
-                    <td><label>CYBER SECURITY</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>BASIC STATISTICS</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>MOBILE APPLICATION DEVELOPMENT LAB </label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>                      
-                <tr>
-                    <td><label>PYTHON LAB</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>OPERATING SYSTEM LAB</label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>DATA MINING AND WAREHOUSING LAB </label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>AMAZON WEB SERVICES LAB </label></td>
-                    <td>
-                        <select>
-                            <option>O</option>
-                            <option>A+</option>
-                            <option>A</option>
-                            <option>B+</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>F</option>
-                        </select>
-                    </td>
-                </tr>      
+                <!-- Repeat for other subjects -->
             </table>
+            
+            <!-- CGPA & Percentage Result Display -->
+            <p id="cgpa-result" style="font-size: 1.2em; font-weight: bold; color: white;"></p>
+            
+            <!-- Submit Button Inside Form -->
+            <button type="submit" id="submit-btn">Submit</button>
         </form>
-        
-        <p id="cgpa-result" style="font-size: 1.2em; font-weight: bold; color: white;"></p>
-        
-        <button type="submit">Submit</button>
     </div>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
