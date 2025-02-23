@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         let cgpa = totalPoints / totalCredits;
-        let percentage = cgpa * 9.5;
+        let percentage = (cgpa-0.75) * 10;
 
         document.getElementById("cgpa-result").textContent = `Your CGPA is: ${cgpa.toFixed(2)} | Percentage: ${percentage.toFixed(2)}%`;
     });
