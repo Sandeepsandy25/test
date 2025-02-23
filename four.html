@@ -131,6 +131,8 @@
             <div id="result-container">
                 <h2>Total Grade Points: <span id="total-points">0</span></h2>
                 <h2>CGPA: <span id="cgpa">0.00</span></h2>
+                <h2>PERCENTAGE: <span id="cgpa">0.00</span></h2>
+
             </div>
             
             <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
@@ -139,20 +141,24 @@
 
     <script>
         function calculateCGPA() {
-            const weights = [4, 4, 2, 2, 2, 3, 3]; // Subject weights
+            const credits = [4, 4, 2, 2, 2, 3, 3]; // Example credit values for each subject
             const grades = document.querySelectorAll(".grade");
+
             let totalPoints = 0, totalCredits = 0;
 
             grades.forEach((select, index) => {
-                let grade = parseInt(select.value);
-                let weight = weights[index] || 1; 
-                totalPoints += grade * weight;
+                let gradeValue = parseInt(select.value);
+                let weight = credits[index];
+                totalPoints += gradeValue * weight;
                 totalCredits += weight;
             });
 
             let cgpa = totalPoints / totalCredits;
+            let percentage = (cgpa - 0.75) * 10;
+
             document.getElementById("total-points").innerText = totalPoints;
             document.getElementById("cgpa").innerText = cgpa.toFixed(2);
+            document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
         }
     </script>
 </body>
