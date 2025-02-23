@@ -203,11 +203,35 @@
                 </tr>      
             </table>
         </form>
-        
-        <p id="cgpa-result" style="font-size: 1.2em; font-weight: bold; color: white;"></p>
-        
-        <button type="submit">Submit</button>
+        <div>
+            <h2>Total Grade Points: <span id="total-points">0</span></h2>
+            <h2>CGPA: <span id="cgpa">0.00</span></h2>
+            <h2>Percentage: <span id="percentage">0.00%</span></h2>
+        </div>
     </div>
+    <script>
+        function calculateCGPA() {
+            const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1]; // Example credit values for each subject
+            const grades = document.querySelectorAll(".grade");
+
+            let totalPoints = 0, totalCredits = 0;
+
+            grades.forEach((select, index) => {
+                let gradeValue = parseInt(select.value);
+                let weight = credits[index];
+                totalPoints += gradeValue * weight;
+                totalCredits += weight;
+            });
+
+            let cgpa = totalPoints / totalCredits;
+            let percentage = (cgpa - 0.75) * 10;
+
+            document.getElementById("total-points").innerText = totalPoints;
+            document.getElementById("cgpa").innerText = cgpa.toFixed(2);
+            document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
+        }
+    </script>
 </body>
-<script src="script.js"></script>
 </html>
+        
+        
