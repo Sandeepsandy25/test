@@ -215,39 +215,39 @@
     </div>
 
     <script>
-        function calculateCGPA() {
-            const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1]; // Example credits
-            const grades = document.querySelectorAll(".grade");
+    function calculateCGPA() {
+        const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1]; // Example credits
+        const grades = document.querySelectorAll(".grade");
 
-            let totalPoints = 0, totalCredits = 0;
-            let hasFail = false;
+        let totalPoints = 0, totalCredits = 0;
+        let hasFail = false;
 
-            grades.forEach((select, index) => {
-                let gradeValue = parseInt(select.value);
-                if (gradeValue === 0) {
-                    hasFail = true;  // If F is found, set fail condition
-                }
-                let weight = credits[index];
-                totalPoints += gradeValue * weight;
-                totalCredits += weight;
-            });
-
-            if (hasFail) {
-                document.getElementById("result-message").innerText = "Result: Fail (F grade detected)";
-                document.getElementById("total-points").innerText = "N/A";
-                document.getElementById("cgpa").innerText = "N/A";
-                document.getElementById("percentage").innerText = "N/A";
-                return;  // Stop further execution
+        grades.forEach((select, index) => {
+            let gradeValue = parseInt(select.value);
+            if (gradeValue === 0) {
+                hasFail = true;  // If F is found, set fail condition
             }
+            let weight = credits[index];
+            totalPoints += gradeValue * weight;
+            totalCredits += weight;
+        });
 
-            let cgpa = totalPoints / totalCredits;
-            let percentage = cgpa * 9.5;
-
-            document.getElementById("result-message").innerText = "";
-            document.getElementById("total-points").innerText = totalPoints;
-            document.getElementById("cgpa").innerText = cgpa.toFixed(2);
-            document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
+        if (hasFail) {
+            document.getElementById("result-message").innerText = "Fail";
+            document.getElementById("total-points").innerText = "N/A";
+            document.getElementById("cgpa").innerText = "N/A";
+            document.getElementById("percentage").innerText = "N/A";
+            return;  // Stop further execution
         }
-    </script>
+
+        let cgpa = totalPoints / totalCredits;
+        let percentage = cgpa * 9.5;
+
+        document.getElementById("result-message").innerText = "Pass";
+        document.getElementById("total-points").innerText = totalPoints;
+        document.getElementById("cgpa").innerText = cgpa.toFixed(2);
+        document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
+    }
+</script>
 </body>
 </html>
