@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1ST SEMESTER-CGPA CALCULATOR</title>
-    
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="one.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
         <h1 class="title">CGPA CALCULATOR</h1>
     </div>
     <div class="one-calulation">
-        <h1 class="one-calculation-title">1ST SEMESTER CGPA CALCULATOR</h1>
+        <h1 class="one-calculation-title"> 1ST SEMESTER CGPA CALCULATOR</h1>
     </div>
     <div class="one-calulation-form">
         <form id="cgpa-form">
@@ -22,7 +23,7 @@
                     <th>GRADE</th>
                 </tr> 
                 <tr>
-                    <td><label>FUNDAMENTAL OF COMMERCE</label></td>
+                    <td><label>FUNDAMENTALS OF COMMERCE</label></td>
                     <td>
                         <select class="grade">
                             <option value="10">O</option>
@@ -50,22 +51,7 @@
                             <option value="0">F</option>
                         </select>
                     </td>
-                </tr>      
-                <tr>
-                    <td><label>INTRODUCTION TO SOCIAL WORK</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>      
+                </tr>
                 <tr>
                     <td><label>ANALYTICAL SKILLS</label></td>
                     <td>
@@ -80,7 +66,22 @@
                             <option value="0">F</option>
                         </select>
                     </td>
-                </tr>      
+                </tr>  
+                <tr>
+                    <td><label>INTRODUCTION TO SOCIAL WORK </label></td>
+                    <td>
+                        <select class="grade">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="5">C</option>
+                            <option value="4">D</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>  
                 <tr>
                     <td><label>COMMUNICATION SKILLS</label></td>
                     <td>
@@ -95,22 +96,7 @@
                             <option value="0">F</option>
                         </select>
                     </td>
-                </tr>              
-                <tr>
-                    <td><label>ENGLISH</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>      
+                </tr> 
                 <tr>
                     <td><label>HINDI OR TELUGU OR OTHERS</label></td>
                     <td>
@@ -126,40 +112,69 @@
                         </select>
                     </td>
                 </tr>  
+                <tr>
+                    <td><label>ENGLISH</label></td>
+                    <td>
+                        <select class="grade">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="5">C</option>
+                            <option value="4">D</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr> 
+               
+                
+                <!-- Add remaining subjects as needed -->
             </table>
-
-            <div id="result-container">
-                <h2>Total Grade Points: <span id="total-points">0</span></h2>
-                <h2>CGPA: <span id="cgpa">0.00</span></h2>
-                <h2>Percentage: <span id="percentage">0.00%</span></h2>
-
-            </div>
-            
-            <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+            <button type="button" onclick="calculateCGPA()">Submit</button>
         </form>
+        <div>
+            <h2 id="result-message"></h2>
+            <h2>Total Grade Points: <span id="total-points">0</span></h2>
+            <h2>CGPA: <span id="cgpa">0.00</span></h2>
+            <h2>Percentage: <span id="percentage">0.00%</span></h2>
+        </div>
     </div>
 
     <script>
-        function calculateCGPA() {
-            const credits = [4, 4, 2, 2, 2, 3, 3]; // Example credit values for each subject
-            const grades = document.querySelectorAll(".grade");
+    function calculateCGPA() {
+        const credits = [4, 4, 2, 2, 2, 3, 3,]; // Example credits
+        const grades = document.querySelectorAll(".grade");
 
-            let totalPoints = 0, totalCredits = 0;
+        let totalPoints = 0, totalCredits = 0;
+        let hasFail = false;
 
-            grades.forEach((select, index) => {
-                let gradeValue = parseInt(select.value);
-                let weight = credits[index];
-                totalPoints += gradeValue * weight;
-                totalCredits += weight;
-            });
+        grades.forEach((select, index) => {
+            let gradeValue = parseInt(select.value);
+            if (gradeValue === 0) {
+                hasFail = true;  // If F is found, set fail condition
+            }
+            let weight = credits[index];
+            totalPoints += gradeValue * weight;
+            totalCredits += weight;
+        });
 
-            let cgpa = totalPoints / totalCredits;
-            let percentage = (cgpa - 0.75) * 10;
-
-            document.getElementById("total-points").innerText = totalPoints;
-            document.getElementById("cgpa").innerText = cgpa.toFixed(2);
-            document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
+        if (hasFail) {
+            document.getElementById("result-message").innerText = "Fail";
+            document.getElementById("total-points").innerText = "N/A";
+            document.getElementById("cgpa").innerText = "N/A";
+            document.getElementById("percentage").innerText = "N/A";
+            return;  // Stop further execution
         }
-    </script>
+
+        let cgpa = totalPoints / totalCredits;
+        let percentage = cgpa * 9.5;
+
+        document.getElementById("result-message").innerText = "Pass";
+        document.getElementById("total-points").innerText = totalPoints;
+        document.getElementById("cgpa").innerText = cgpa.toFixed(2);
+        document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
+    }
+</script>
 </body>
 </html>
