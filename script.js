@@ -20,9 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const selects = document.querySelectorAll("select");
         let totalPoints = 0;
         let totalCredits = 0;
+        let hasFail = false;
 
         selects.forEach((select, index) => {
             let grade = select.value;
+            if (grade === "F") {
+                hasFail = true;
+            }
             let gradePoint = gradeMapping[grade];
             let weight = 1;
 
@@ -35,9 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
             totalPoints += gradePoint * weight;
             totalCredits += weight;
         });
+
+        if (hasFail) {
+            document.getElementById("cgpa-result").textContent = "Result: Fail (F grade detected)";
+            return;  // Stop further execution
+        }
         
         let cgpa = totalPoints / totalCredits;
-        let percentage = (cgpa-0.75) * 10;
+        let percentage = cgpa * 9.5;
 
         document.getElementById("cgpa-result").textContent = `Your CGPA is: ${cgpa.toFixed(2)} | Percentage: ${percentage.toFixed(2)}%`;
     });
