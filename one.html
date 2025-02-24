@@ -12,7 +12,7 @@
         <h1 class="title">CGPA CALCULATOR</h1>
     </div>
     <div class="one-calulation">
-        <h1 class="one-calculation-title">3RD SEMESTER CGPA CALCULATOR</h1>
+        <h1 class="one-calculation-title"> 4TH SEMESTER CGPA CALCULATOR</h1>
     </div>
     <div class="one-calulation-form">
         <form id="cgpa-form">
@@ -50,183 +50,49 @@
                             <option value="0">F</option>
                         </select>
                     </td>
-                </tr>      
-                <tr>
-                    <td><label>OPERATING SYSTEM</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>DATA MINING AND WAREHOUSING</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>      
-                <tr>
-                    <td><label>AMAZON WEB SERVICES</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>               
-                <tr>
-                    <tr>
-                       <td><label> CYBER SECURITY </label></td>
-                      <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label> BASIC STATISTICS</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>               
-                    <td><label> MOBILE APPLICATION DEVELOPMENT LAB</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr> 
-                <tr>
-                    <td><label>PYTHON LAB</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr> 
-                <tr>
-                    <td><label>OPERATING SYSTEM  LAB</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr> 
-                <tr>
-                    <td><label>DATA MINING AND WAREHOUSING LAB</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>   
-                <tr>
-                    <td><label>AMAZON WEB SERVICES LAB</label></td>
-                    <td>
-                        <select class="grade">
-                            <option value="10">O</option>
-                            <option value="9">A+</option>
-                            <option value="8">A</option>
-                            <option value="7">B+</option>
-                            <option value="6">B</option>
-                            <option value="5">C</option>
-                            <option value="4">D</option>
-                            <option value="0">F</option>
-                        </select>
-                    </td>
-                </tr>               
+                </tr>  
+                <!-- Add remaining subjects as needed -->
             </table>
             <button type="button" onclick="calculateCGPA()">Submit</button>
         </form>
         <div>
+            <h2 id="result-message"></h2>
             <h2>Total Grade Points: <span id="total-points">0</span></h2>
             <h2>CGPA: <span id="cgpa">0.00</span></h2>
             <h2>Percentage: <span id="percentage">0.00%</span></h2>
         </div>
     </div>
+
     <script>
         function calculateCGPA() {
-            const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1]; // Example credit values for each subject
+            const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1]; // Example credits
             const grades = document.querySelectorAll(".grade");
 
             let totalPoints = 0, totalCredits = 0;
+            let hasFail = false;
 
             grades.forEach((select, index) => {
                 let gradeValue = parseInt(select.value);
+                if (gradeValue === 0) {
+                    hasFail = true;  // If F is found, set fail condition
+                }
                 let weight = credits[index];
                 totalPoints += gradeValue * weight;
                 totalCredits += weight;
             });
 
-            let cgpa = totalPoints / totalCredits;
-            let percentage = (cgpa - 0.75) * 10;
+            if (hasFail) {
+                document.getElementById("result-message").innerText = "Result: Fail (F grade detected)";
+                document.getElementById("total-points").innerText = "N/A";
+                document.getElementById("cgpa").innerText = "N/A";
+                document.getElementById("percentage").innerText = "N/A";
+                return;  // Stop further execution
+            }
 
+            let cgpa = totalPoints / totalCredits;
+            let percentage = cgpa * 9.5;
+
+            document.getElementById("result-message").innerText = "";
             document.getElementById("total-points").innerText = totalPoints;
             document.getElementById("cgpa").innerText = cgpa.toFixed(2);
             document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
