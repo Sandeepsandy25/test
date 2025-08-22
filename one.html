@@ -201,6 +201,20 @@
                         </select>
                     </td>
                 </tr>  
+                <td><label>Short Term Internship</label></td>
+                    <td>
+                        <select class="grade">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="5">C</option>
+                            <option value="4">D</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>  
                 
                 <!-- Add remaining subjects as needed -->
             </table>
@@ -216,7 +230,7 @@
 
     <script>
     function calculateCGPA() {
-        const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1]; // Example credits
+        const credits = [3, 3, 3, 3, 3, 2, 2, 1, 1, 1, 1, 1,4]; // Example credits
         const grades = document.querySelectorAll(".grade");
 
         let totalPoints = 0, totalCredits = 0;
@@ -251,3 +265,4 @@
 </script>
 </body>
 </html>
+
